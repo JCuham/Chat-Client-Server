@@ -1,0 +1,53 @@
+﻿<Window x:Class="ChatClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChatClient"
+        mc:Ignorable="d"
+        Title="ChatClient" Height="630" Width="820">
+    <Grid Background="#FF202225">
+
+        <!--Login Frame Start-->
+        <!--Chat Box Start-->
+        <GroupBox x:Name="groupBoxChat" HorizontalAlignment="Left" VerticalAlignment="Top" Height="500" Header="Chat" Margin="285,79,0,5" Width="505" BorderBrush="#FF202225" Foreground="White">
+            <Grid Background="#FF36393F">
+                <TextBox x:Name="chatBox" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,58,0" TextWrapping="Wrap" Text="Type here to chat..." Width="420" Height="36" Background="#FF202225" Foreground="White"/>
+                <Button x:Name="btnSendMsg" Content="Send" HorizontalAlignment="Right" VerticalAlignment="Top" Height="36" Width="48" Margin="0,441,10,0" Foreground="White" Background="#FF74A1E4" Click="btnSendMsg_Click"/>
+                <RichTextBox x:Name="displayMsgBox" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF202225" Foreground="White" Height="426" Width="468" VerticalScrollBarVisibility="Visible" IsReadOnly="True" Block.LineHeight="1" FontStretch="Normal">
+                    <FlowDocument>
+                        <Paragraph LineHeight="4pt" LineStackingStrategy="BlockLineHeight">
+                            <Run Text="Messages Will Display Below..."/>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+            </Grid>
+        </GroupBox>
+        <!--Available servers start-->
+        <GroupBox x:Name="groupBoxServers" HorizontalAlignment="Left" VerticalAlignment="Top" Height="500" Header="Available Servers" Margin="10,79,0,5" Width="270" BorderBrush="#FF202225" Foreground="White">
+            <Grid Background="#FF36393F">
+            </Grid>
+        </GroupBox>
+        <!--Menu Start-->
+        <GroupBox x:Name="menuBox" Header="Menu" Width="780" Height="65" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,10,10,0" Background="#FF36393F" BorderBrush="#FF202225" Foreground="White">
+            <Grid>
+                <Button x:Name="btnChangeName" Content="Back to Login" HorizontalAlignment="Left" VerticalAlignment="Center" Height="36" Width="94" Margin="10,0,0,0" Foreground="White" Background="#FF202225"/>
+                <Button x:Name="btnCreateRoom" Content="Create Room" HorizontalAlignment="Left" VerticalAlignment="Center" Height="36" Width="94" Margin="242,0,0,0" Foreground="White" Background="#FF97BF70"/>
+                <Button x:Name="btnJoinRoom" Content="Join Selected Room" HorizontalAlignment="Left" VerticalAlignment="Center" Height="36" Width="128" Margin="341,0,0,0" Foreground="White" Background="#FF74A1E4"/>
+                <Button x:Name="btnDeleteRoom" Content="Delete Current Room" HorizontalAlignment="Right" VerticalAlignment="Center" Height="36" Width="122" Margin="636,0,0,0" Foreground="White" Background="#FFEC5A39"/>
+                <Button x:Name="btnUpdateRoomList" Content="Update Room List" HorizontalAlignment="Left" VerticalAlignment="Center" Height="36" Width="128" Margin="109,0,0,0" Foreground="White" Background="#FF202225"/>
+            </Grid>
+        </GroupBox>
+        
+        <!--Login Grid Start-->
+        <Grid x:Name="loginFrame" Background="Aqua">
+            <Label x:Name="labelLogin" Content="Welcome To The Chat :)" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" FontSize="36"/>
+            <TextBox x:Name="textBoxEnterName" TextWrapping="Wrap" Text="Please enter a nickname!" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,150,0,0" Width="400" Height="30" MouseLeftButtonDown="textBoxEnterName_MouseLeftButtonDown"/>
+            <Button x:Name="buttonConnect" Content="Connect to Server" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,250,0,0" Width="400" Height="30" Background="#FF99C0FF" Click="buttonConnect_Click"/>
+
+
+        </Grid>
+
+
+    </Grid>
+</Window>
